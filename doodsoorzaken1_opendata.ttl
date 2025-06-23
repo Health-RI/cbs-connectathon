@@ -1,0 +1,57 @@
+@prefix n0: <http://publications.europa.eu/resource/authority/access-right/>.
+@prefix c: <https://ehdsfdp.healthdataportal.eu:443/catalog/>.
+@prefix pub: <http://healthdataportal.eu/resource/authority/publisher-type/>.
+@prefix d: <http://publications.europa.eu/resource/authority/data-theme/>.
+@prefix kor: <https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix technical: <http://technical.fdp/>.
+
+<blankNode:dataset>
+    a dcat:Dataset, dcat:Resource;
+    dct:accessRights n0:PUBLIC;
+    dct:description
+        """Deze tabel bevat cijfers over de onderliggende doodsoorzaken van overleden inwoners van Nederland. De cijfers zijn uitgesplitst per kwartaal en jaar van overlijden naar een beperkt aantal doodsoorzaken.
+
+De sterfte aan COVID-19 of de ziekte veroorzaakt door het nieuwe coronavirus wordt gecodeerd met de ICD-10 codes U07.1 of U07.2. Deze codes zijn door de Wereldgezondheidsorganisatie (WHO) als 'emergency codes' of tijdelijke noodcodes neergezet en zullen later in een hoofdstuk van de ICD10 opgenomen worden. Deze codes worden daarom nu nog in de kwartaal tabel geteld bij de categorie 'Overige doodsoorzaken'.
+
+Het CBS is in het statistiekjaar 2013 overgestapt op het gebruik van internationale software voor automatisch coderen van de doodsoorzaken. Hiermee zijn de cijfers beter reproduceerbaar en internationaal vergelijkbaar. Wel zijn er enkele forse verschuivingen te zien in de doodsoorzaken (zie paragraaf 4).
+
+Gegevens beschikbaar vanaf: 1e kwartaal 1996
+
+Status van de cijfers: De cijfers over 2024 zijn voorlopig, de overige cijfers zijn definitief.
+
+Wijzigingen per 16 mei 2025: De voorlopige cijfers over het vierde kwartaal en het totaal van 2024 zijn toegevoegd, de cijfers over de eerste drie kwartalen van 2024 zijn aangepast.
+
+Wanneer komen er nieuwe cijfers? In het derde kwartaal van 2025 verschijnen cijfers over het eerste kwartaal van 2025.
+
+Bestemmingspagina: https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED"""@nl;
+    dct:identifier
+        "https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED"^^xsd:anyURI;
+    dct:isPartOf c:4329f5bd-f60f-483a-8f99-18ec996eb0d5;
+    dct:publisher
+            [
+                a foaf:Agent;
+                healthdcatap:publisherType pub:statitics;
+                foaf:homepage <https://www.cbs.nl>;
+                foaf:name "Centraal Bureau voor de Statistiek"
+            ];
+    dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
+    technical:modified "2025-06-18T13:25:54.820Z"^^xsd:dateTime;
+    dcat:distribution <blankNode:distribution-0>;
+    dcat:theme d:HEAL;
+    foaf:page kor:doodsoorzakenstatistiek.
+<blankNode:distribution-0>
+    a dcat:Distribution;
+    dct:isPartOf <blankNode:dataset>;
+    dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
+    dcat:accessURL
+        <https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED>.
+n0:PUBLIC a dct:RightsStatement.
+
+d:HEAL a skos:Concept; skos:prefLabel "Health"@en.
+
