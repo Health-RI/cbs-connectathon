@@ -10,6 +10,7 @@
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix technical: <http://technical.fdp/>.
+@prefix dcatap: <http://www.w3.org/ns/dcat#app>.
 
 <blankNode:dataset>
     a dcat:Dataset, dcat:Resource;
@@ -33,25 +34,39 @@ Bestemmingspagina: https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=
     dct:identifier
         "https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED"^^xsd:anyURI;
     dct:isPartOf c:4329f5bd-f60f-483a-8f99-18ec996eb0d5;
-    dct:publisher
-            [
-                a foaf:Agent;
-                healthdcatap:publisherType pub:statitics;
-                foaf:homepage <https://www.cbs.nl>;
-                foaf:name "Centraal Bureau voor de Statistiek"
-            ];
+    dct:publisher [
+        a foaf:Agent;
+        foaf:name "Centraal Bureau voor de Statistiek";
+        foaf:homepage <https://www.cbs.nl>;
+        healthdcatap:publisherType pub:statitics
+    ];
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2016/679>;
+    dct:type <http://publications.europa.eu/resource/authority/dataset-type/PERSONAL_DATA>;
+    healthdcatap:healthCategory <http://healthdataportal.eu/resource/health-category/mortality>;
+    healthdcatap:hdab [
+        a foaf:Agent;
+        foaf:name "Centraal Bureau voor de Statistiek"
+    ];
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
     technical:modified "2025-06-18T13:25:54.820Z"^^xsd:dateTime;
     dcat:distribution <blankNode:distribution-0>;
     dcat:theme d:HEAL;
-    foaf:page kor:doodsoorzakenstatistiek.
+    foaf:page [
+        a foaf:Document;
+        foaf:homepage <https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/doodsoorzakenstatistiek>
+    ];
 <blankNode:distribution-0>
     a dcat:Distribution;
     dct:isPartOf <blankNode:dataset>;
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
     dcat:accessURL
-        <https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED>.
+        <https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED>;
+    dct:license <http://creativecommons.org/licenses/by/4.0/>;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>;
+    dct:format "text/csv".
 n0:PUBLIC a dct:RightsStatement.
 
 d:HEAL a skos:Concept; skos:prefLabel "Health"@en.
 
+<http://publications.europa.eu/resource/authority/continent> a skos:ConceptScheme;
+    dct:title "Continent vocabulary"@en.
