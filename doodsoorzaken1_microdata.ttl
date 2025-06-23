@@ -1,0 +1,134 @@
+@prefix n0: <http://data.europa.eu/eli/reg/2022/868/>.
+@prefix BWB: <https://wetten.overheid.nl/BWBR0015926/>.
+@prefix he: <http://healthdataportal.eu/resource/authority/healthcategories/>.
+@prefix ent: <http://www.wikidata.org/entity/>.
+@prefix n1: <http://publications.europa.eu/resource/authority/access-right/>.
+@prefix fre: <http://publications.europa.eu/resource/authority/frequency/>.
+@prefix c: <https://ehdsfdp.healthdataportal.eu:443/catalog/>.
+@prefix pub: <http://healthdataportal.eu/resource/authority/publisher-type/>.
+@prefix code: <http://data.europa.eu/nuts/code/>.
+@prefix d: <http://publications.europa.eu/resource/authority/dataset-type/>.
+@prefix d0: <http://publications.europa.eu/resource/authority/data-theme/>.
+@prefix n2: <https://doi.org/10.57934/>.
+@prefix ont: <http://data.europa.eu/eli/ontology#>.
+@prefix m: <https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+@prefix dpv: <https://w3id.org/dpv#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#>.
+@prefix dcatap: <http://data.europa.eu/r5r/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix technical: <http://technical.fdp/>.
+@prefix oj: <https://eur-lex.europa.eu/eli/reg/2008/1338/oj/>.
+@prefix pl: <http://publications.europa.eu/resource/authority/planned-availability/>.
+@prefix fil: <http://publications.europa.eu/resource/authority/file-type/>.
+@prefix d1: <https://portal.odissei.nl/dataset.xhtml?persistentId=doi:10.57934/>.
+
+<blankNode:dataset>
+    a dcat:Dataset, dcat:Resource;
+    dcatap:applicableLegislation n0:oj, BWB:2022-03-02;
+    healthdcatap:hdab
+            [
+                a foaf:Agent, foaf:Organization;
+                locn:address
+                        [
+                            a locn:Address;
+                            locn:adminUnitL1
+                            "http://data.europa.eu/nuts/code/NL"
+                        ];
+                foaf:name "HDAB Nederland"
+            ];
+    healthdcatap:healthCategory he:MRMR;
+    healthdcatap:healthTheme ent:Q1931388;
+    healthdcatap:populationCoverage
+        "Overleden personen die op het moment van overlijden ingeschreven stonden in de GBA. De component heeft betrekking op een bepaald verslagjaar of deel van een verslagjaar. De verslagperiode geeft aan welke periode beschikbaar is. Jaarbestanden hebben releaseaanduiding definitief, een deel van een jaar heeft als releaseaanduiding voorlopig."@nl;
+    dct:accessRights n1:NON_PUBLIC;
+    dct:accrualPeriodicity fre:ANNUAL;
+    dct:alternative "DOODOORZJJJJTABVV"@nl;
+    dct:description
+        "Bevat alle onderliggende doodsoorzaken van personen die in de BRP ingeschreven waren en zijn overleden sinds statistiekjaar 2013. Daarnaast is voor de personen die overleden zijn aan een niet-natuurlijke dood ook het belangrijkste letsel en de locatie van het ongeval opgenomen. Bij alle overledenen is daarbij ook de locatie van overlijden en het statistiekjaar, oftewel het jaar waarin de overledene is opgenomen in de statistiek, aanwezig in deze component."@nl;
+    dct:identifier "https://doi.org/10.57934/0b01e410802359a7"^^xsd:anyURI;
+    dct:isPartOf c:4329f5bd-f60f-483a-8f99-18ec996eb0d5;
+    dct:provenance <internalURI:datasetProvenance0>;
+    dct:publisher
+            [
+                a foaf:Agent;
+                healthdcatap:publisherNote "Cis"@nl;
+                healthdcatap:publisherType pub:statitics;
+                healthdcatap:trustedDataHolder true;
+                foaf:homepage <https://www.cbs.nl>;
+                foaf:name "Centraal Bureau voor de Statistiek"
+            ];
+    dct:spatial code:NL;
+    dct:temporal [ a dct:PeriodOfTime; dcat:startDate "2015-01-01"^^xsd:date ];
+    dct:title
+        "Doodsoorzaken van personen die bij overlijden inwoners waren van Nederland"@nl;
+    dct:type d:PERSONAL_DATA;
+    technical:modified "2025-06-18T13:56:51.827Z"^^xsd:dateTime;
+    dcat:contactPoint <internalURI:contactPoint0>;
+    dcat:distribution <blankNode:distribution-0>;
+    dcat:keyword
+        "Doodsoorzaak"@nl, "Doodsoorzaakverklaring"@nl, "Overledene"@nl,
+        "Sterfte"@nl;
+    dcat:theme d0:HEAL;
+    foaf:page n2:0b01e410802359a7;
+    dpv:hasPurpose <internalURI:datasetPurpose0>.
+<blankNode:distribution-0>
+    a dcat:Distribution;
+    dcatap:applicableLegislation oj:eng;
+    dcatap:availability pl:AVAILABLE;
+    dct:format fil:CSV;
+    dct:isPartOf <blankNode:dataset>;
+    dct:rights
+            [
+                a dct:RightsStatement;
+                rdfs:label
+                    "Deze dataset is alleen beschikbaar onder strikte voorwaarden binnen de Remote-Access-omgeving van het CBS. Lees hier meer over de voorwaarden voor toegang en gebruik van de data: https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen"@nl
+            ];
+    dct:title
+        "Doodsoorzaken van personen die bij overlijden inwoners waren van Nederland in CBS Beveiligde Microdataomgeving"@nl;
+    dcat:accessURL d1:0b01e410802359a7;
+    dcat:byteSize "1"^^xsd:nonNegativeInteger.
+n0:oj a ont:LegalResource.
+
+code:NL a dct:Location.
+
+he:MRMR
+    a skos:Concept;
+    skos:prefLabel "Data from medical registries and mortality registries"@en.
+n1:NON_PUBLIC a dct:RightsStatement.
+
+d0:HEAL a skos:Concept; skos:prefLabel "Health"@en.
+
+d:PERSONAL_DATA a skos:Concept; skos:prefLabel "Personal Data"@en.
+
+fil:CSV a dct:MediaTypeOrExtent.
+
+fre:ANNUAL a dct:Frequency.
+
+pl:AVAILABLE a skos:Concept; skos:prefLabel "Available"@en.
+
+ent:Q1931388 a skos:Concept; skos:prefLabel "cause of death"@en.
+
+oj:eng a ont:LegalResource.
+
+BWB:2022-03-02 a ont:LegalResource.
+
+<internalURI:contactPoint0>
+    a vcard:Kind, vcard:Organization;
+    vcard:fn "Centraal Bureau voor de Statistiek";
+    vcard:hasEmail <mailto:microdata@cbs.nl>;
+    vcard:hasURL m:microdata-zelf-onderzoek-doen.
+<internalURI:datasetProvenance0>
+    a dct:ProvenanceStatement;
+    rdfs:label
+        "Voor iedere overledene wordt een doodsoorzaakverklaring (B-verklaring) ingevuld door een arts. Deze doodsoorzaakverklaring wordt of in een gesloten enveloppe via de gemeente waar het overlijden heeft plaatsgevonden of via een beveiligde elektronische verbinding direct digitaal naar de medisch ambtenaar van het CBS gestuurd. Bij het CBS worden de formulieren verwerkt. Dit gebeurt volledig anoniem, de naam van de overledene is bij het CBS niet bekend."@nl.
+<internalURI:datasetPurpose0>
+    a dpv:Purpose;
+    dct:description
+        "Het publiceren van gegevens over de doodsoorzaken van alle overleden inwoners van Nederland"@nl.
