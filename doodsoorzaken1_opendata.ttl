@@ -46,11 +46,11 @@ Bestemmingspagina: https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=
             ];
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
     technical:modified "2025-06-18T13:25:54.820Z"^^xsd:dateTime;
-    dcat:distribution <blankNode:distribution-0>;
+    dcat:distribution <https://ww.example.com/distribution-0>;
     dcat:theme d:HEAL;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj>;
     foaf:page <https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/doodsoorzakenstatistiek>.
-<blankNode:distribution-0>
+<https://ww.example.com/distribution-0>
     a dcat:Distribution;
     dct:isPartOf <blankNode:dataset>;
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
