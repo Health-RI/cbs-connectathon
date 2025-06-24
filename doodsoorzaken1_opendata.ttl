@@ -51,7 +51,7 @@ Bestemmingspagina: https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj>;
     foaf:page <https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/doodsoorzakenstatistiek>.
 <https://ww.example.com/distribution-0>
-    a dcat:Distribution;
+    a dcat:Distribution, dcat:Resource;
     dct:isPartOf <blankNode:dataset>;
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
     dct:format <http://publications.europa.eu/resource/authority/file-type/CSV>;
