@@ -8,7 +8,9 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#>.
+@prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
 @prefix technical: <http://technical.fdp/>.
 
 <blankNode:dataset>
@@ -36,22 +38,42 @@ Bestemmingspagina: https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=
     dct:publisher
             [
                 a foaf:Agent;
-                healthdcatap:publisherType pub:statitics;
-                foaf:homepage <https://www.cbs.nl>;
+                healthdcatap:publisherType pub:statistics;
+                foaf:page <https://www.cbs.nl>;
+                foaf:mbox <mailto:info@cbs.nl>;
+                dct:identifier "https://www.cbs.nl"^^xsd:anyURI;
                 foaf:name "Centraal Bureau voor de Statistiek"
             ];
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
     technical:modified "2025-06-18T13:25:54.820Z"^^xsd:dateTime;
-    dcat:distribution <blankNode:distribution-0>;
+    dcat:distribution <https://ww.example.com/distribution-0>;
     dcat:theme d:HEAL;
-    foaf:page kor:doodsoorzakenstatistiek.
-<blankNode:distribution-0>
-    a dcat:Distribution;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj>;
+    foaf:page <https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/doodsoorzakenstatistiek>.
+<https://ww.example.com/distribution-0>
+    a dcat:Distribution, dcat:Resource;
     dct:isPartOf <blankNode:dataset>;
     dct:title "Overledenen; doodsoorzaak, kwartaal en jaar overlijden"@nl;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV>;
     dcat:accessURL
-        <https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED>.
-n0:PUBLIC a dct:RightsStatement.
+        <https://opendata.cbs.nl/statline/portal.html?_la=nl&_catalog=CBS&tableId=82899NED>;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj>.
+n0:PUBLIC a dct:RightsStatement; skos:prefLabel "Public"@en.
 
 d:HEAL a skos:Concept; skos:prefLabel "Health"@en.
 
+<https://www.cbs.nl/nl-nl/onze-diensten/methoden/onderzoeksomschrijvingen/korte-onderzoeksomschrijvingen/doodsoorzakenstatistiek> a foaf:Document.
+
+
+<http://data.europa.eu/eli/reg/2025/327/oj> a eli:LegalResource.
+
+<http://publications.europa.eu/resource/authority/file-type/CSV> a dct:MediaTypeOrExtent.
+
+<http://creativecommons.org/licenses/by/4.0/> a dct:LicenseDocument.
+
+<http://publications.europa.eu/resource/authority/language/NLD> a skos:Concept;
+    skos:prefLabel "Dutch"@en.
+
+<http://publications.europa.eu/resource/authority/continent>
+    a skos:ConceptScheme;
+    dct:title "Continent codes (EU Publications Office)"@en.
